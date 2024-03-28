@@ -1,0 +1,103 @@
+@fontePrincipal: Roboto, sans-serif;
+@fonteTitulo: Lobster, cursive;
+@corTexto: #fff;
+@corNumero: #000;
+@corFundo: #eb3b5e;
+@corDisplay: aqua;
+@corHoverBtn: #d1d1d1;
+@corBtnMath: #007bff;
+@corBtnHover: #0056b3;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: @corFundo;
+    font-family: @fontePrincipal;
+    color: @corTexto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
+
+    h1 {
+        font-family: @fonteTitulo;
+        font-size: 3em;
+        text-align: center;
+    }
+}
+
+.calculator {
+    background-color: @corFundo;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    max-width: 100%;
+    padding: 10px;
+
+    .display {
+        background-color: @corTexto;
+        color: @corNumero;
+        font-size: 2em;
+        padding: 10px;
+        text-align: right;
+        margin-bottom: 10px;
+    }
+
+    .keys {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .row-1, .row-2, .row-3, .row-4, .row-5 {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .key {
+            background-color: @corDisplay;
+            border: none;
+            font-size: 1.5em;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.3s;
+            width: 23%;
+            margin: 1%;
+
+            &:hover {
+                background-color: @corHoverBtn;
+            }
+
+            &.operator {
+                background-color: @corBtnMath;
+                color: @corTexto;
+
+                &:hover {
+                    background-color: @corBtnHover;
+                }
+            }
+
+            &.clear {
+                background-color: @corDisplay;
+                color: @corTexto;
+
+                &:hover {
+                    background-color: @corHoverBtn;
+                }
+            }
+
+            &#equal {
+                width: 100%;
+                margin: 1%;
+                font-size: 1.5em;
+                padding: 15px;
+            }
+        }
+    }
+}
